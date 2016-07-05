@@ -144,7 +144,7 @@ function wdiCard(){
 Replace is pretty straightforward. Should this directive replace the HTML? Do you want it to get rid of what's in the template & swap it out with the template we're going to make? Or add to it, and not remove the original. For example, replacing would mean:
 
 ```html
-<div ng-repeat="card in cardsCtlr.questionList" >
+<div ng-repeat="card in cardsCtrl.questionsList" >
   <wdi-card></wdi-card>
 </div>
 ```
@@ -152,7 +152,7 @@ Replace is pretty straightforward. Should this directive replace the HTML? Do yo
 Would actually render as:
 
 ```html
-<div ng-repeat="card in cardsCtlr.questionList" >
+<div ng-repeat="card in cardsCtrl.questionsList" >
   <div class='card'>
     <h4 class="card-title">{{question}}</h4>
     <h6>Cards Against Assembly</h6>
@@ -216,7 +216,7 @@ And lastly, in our `index.html`, let's finally use our custom directive. So exci
 
 ```html
 <!-- index.html -->
-<div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsCtlr.questionList" >
+<div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsCtrl.questionsList" >
   <wdi-card></wdi-card>
 </div>
 ```
@@ -229,7 +229,7 @@ This is awesome. This is a great, reusable component. Except for _one_ thing.
 
 #### 4. `scope`
 
-If you notice, our template uses ``{{card.question}}`` inside it. This obviously works perfectly - we're geniuses. But what if we wanted to render a card somewhere outside of that `ng-repeat`, where `card in cardsCtlr.questionList` isn't a thing. What if we want to render a one-off card, reusing our awesome new directive elsewhere? Isn't that part of the point?
+If you notice, our template uses ``{{card.question}}`` inside it. This obviously works perfectly - we're geniuses. But what if we wanted to render a card somewhere outside of that `ng-repeat`, where `card in cardsCtrl.questionsList` isn't a thing. What if we want to render a one-off card, reusing our awesome new directive elsewhere? Isn't that part of the point?
 
 It sure is. We're lacking a precise scope.
 
