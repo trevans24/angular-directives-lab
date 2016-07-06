@@ -267,12 +267,12 @@ angular.module('CardsAgainstAssembly')
 function wdiCard(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
-    restrict: 'E';
-    replace: true;
-    templateUrl:  "templates/cardDirective.html";
+    restrict: 'E',
+    replace: true,
+    templateUrl:  "templates/cardDirective.html",
     scope: {
         question: '@'
-    };
+    }
   };
 
   return directive;
