@@ -322,3 +322,8 @@ Would you look at that? Our own custom directive - a reusable, semantic HTML com
 ### Resources
 
 [This cheat sheet from egghead.io](https://d2eip9sf3oo6c2.cloudfront.net/pdf/egghead-io-directive-definition-object-cheat-sheet.pdf) is a great resource for learning more about the specs allowed in the directive definition object.
+
+
+## Licensing
+All content is licensed under a CC­BY­NC­SA 4.0 license.
+All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
