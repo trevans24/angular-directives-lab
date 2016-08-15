@@ -274,9 +274,9 @@ And finally, in `scripts/cardDirective.js`:
 
 ```js
 angular.module('CardsAgainstAssembly')
-  .directive('WdiCard', WdiCard);
+  .directive('wdiCard', wdiCard);
 
-function WdiCard(){
+function wdiCard(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
