@@ -226,7 +226,7 @@ And lastly, in our `index.html`, let's finally use our custom directive. So exci
 
 ```html
 <!-- index.html -->
-<div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsCtrl.questionsList" >
+<div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsController.questionsList" >
   <wdi-card></wdi-card>
 </div>
 ```
