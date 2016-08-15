@@ -76,7 +76,7 @@ only serves up static files from the current directory
 
 This will let us serve up our HTML and JS files without running into Cross Origin issues. 
 <details>
-  We need to do this since by default Chrome doesn't let us request another local file as an HTTP request. This prevents someone from fishing for a specifc file on your computer when you're visiting a site
+  We need to do this since by default Chrome doesn't let us request another local file as an HTTP request. This prevents someone from fishing for a specifc file on your computer when you're visiting a site.
 </details>
 
 ### Let's be organized!
@@ -215,7 +215,7 @@ function wdiCard(){
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
     replace: true,
-    templateUrl:  "scripts/templates/cardDirective.html"
+    templateUrl:  "templates/cardDirective.html"
   };
 
   return directive;
