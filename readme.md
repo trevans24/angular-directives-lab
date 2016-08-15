@@ -152,7 +152,7 @@ Replace is pretty straightforward. Should this directive replace the HTML? Do yo
 Would actually render as:
 
 ```html
-<div ng-repeat="card in cardsCtrl.questionsList" >
+<div ng-repeat="card in CardsController.questionsList" >
   <div class='card'>
     <h4 class="card-title">{{question}}</h4>
     <h6>Cards Against Assembly</h6>
@@ -163,7 +163,7 @@ Would actually render as:
 See, it's replaced. Let's say we like that for our example:
 
 ```js
-function wdiCard(){
+function WdiCard(){
   var directive = {
     restrict: 'E',
     replace: true
