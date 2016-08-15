@@ -88,6 +88,8 @@ I called it:
 cardDirective.js
 ```
 
+Don't forget to include this JS file in your `index.html` file.
+
 #### Directives are as easy as...
 
 Just like controllers and routing configurations, the first line is a simple extension of `angular`:
