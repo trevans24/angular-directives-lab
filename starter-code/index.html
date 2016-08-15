@@ -19,10 +19,10 @@
           <scores></scores>
         </header>
 
-        <section id="cards" class="container-fluid" ng-controller="CardsController as cardsCtrl">
+        <section id="cards" class="container-fluid" ng-controller="CardsController as cardsController">
           <div class="row">
 
-            <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="card in cardsCtrl.questionsList" >
+            <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="card in cardsController.questionsList" >
               <div class="card">
                 <h4 class="card-title">{{card.question}}</h4>
                 <h6>Cards Against Assembly</h6>
