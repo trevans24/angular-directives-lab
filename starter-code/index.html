@@ -19,17 +19,7 @@
           <scores></scores>
         </header>
 
-        <section id="cards" class="container-fluid" ng-controller="cardsController as cardsCtrl">
-          <div class="row">
-
-            <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="card in cardsCtrl.questionsList" >
-              <div class="card">
-                <h4 class="card-title">{{card.question}}</h4>
-                <h6>Cards Against Assembly</h6>
-              </div>
-            </div>
-
-          </div>
+        <section id="cards" class="container-fluid" ng-controller="CardsController as cardsController">
         </section>
 
       <footer>

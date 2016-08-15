@@ -67,7 +67,17 @@ We want it to look like:
 
 Take five minutes and inspect our starter code. You'll see a pretty normal Angular app, and since we're repeating using those cards, and there's a few consistent tags we're repeating every time we render a card, we're going to experiment with making those cards a custom-defined directive.
 
+Since we're going to see how Angular handles templates, we'll need to start a simple static webserver. We could build a quick express app but instead we can use
+```bash
+  python -m SimpleHTTPServer
+```
+``cd starter-code`` and then type ``python -m SimpleHTTPServer``. This will start a simple webserver that 
+only serves up static files from the current directory
 
+This will let us serve up our HTML and JS files without running into Cross Origin issues. 
+<details>
+  We need to do this since by default Chrome doesn't let us request another local file as an HTTP request. This prevents someone from fishing for a specifc file on your computer when you're visiting a site
+</details>
 
 ### Let's be organized!
 
@@ -84,7 +94,7 @@ Just like controllers and routing configurations, the first line is a simple ext
 
 ```js
 angular.module('CardsAgainstAssembly')
-  .directive('WdiCard', WdiCard);
+  .directive('wdiCard', wdiCard);
 ```
 
 An important thing to point out: The first argument is the name of the directive and how you'll use it in your HTML. **Angular converts `camelCase` to `snake-case` for us, so if you want to use `<secret-garden></secret-garden>` in your HTML, name your directive** `.directive('secretGarden', myFunctionIHaventMadeYet)`.  
@@ -96,7 +106,7 @@ Remember, in the official Angular docs it's called `ngClass` or `ngRepeat`, but 
 Now, we obviously need a function named `wdiCard`!
 
 ```js
-function WdiCard(){
+function wdiCard(){
   var directive = {};
   return directive;
 }
@@ -131,7 +141,7 @@ You can choose to have just one, all of the above, or any combination you like. 
 For ours, let's play with just an element.
 
 ```js
-function WdiCard(){
+function wdiCard(){
   var directive = {
     restrict: 'E'
   };
@@ -144,7 +154,7 @@ function WdiCard(){
 Replace is pretty straightforward. Should this directive replace the HTML? Do you want it to get rid of what's in the template & swap it out with the template we're going to make? Or add to it, and not remove the original. For example, replacing would mean:
 
 ```html
-<div ng-repeat="card in cardsCtrl.questionsList" >
+<div ng-repeat="card in cardsController.questionsList" >
   <wdi-card></wdi-card>
 </div>
 ```
@@ -152,7 +162,7 @@ Replace is pretty straightforward. Should this directive replace the HTML? Do yo
 Would actually render as:
 
 ```html
-<div ng-repeat="card in CardsController.questionsList" >
+<div ng-repeat="card in cardsController.questionsList" >
   <div class='card'>
     <h4 class="card-title">{{question}}</h4>
     <h6>Cards Against Assembly</h6>
@@ -163,7 +173,7 @@ Would actually render as:
 See, it's replaced. Let's say we like that for our example:
 
 ```js
-function WdiCard(){
+function wdiCard(){
   var directive = {
     restrict: 'E',
     replace: true
@@ -200,12 +210,12 @@ Quickly `touch templates/cardDirective.html` or some similarly obvious-named tem
 In `scripts/cardDirective.js`, we can add our option:
 
 ```js
-function WdiCard(){
+function wdiCard(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
     replace: true,
-    templateUrl:  "templates/cardDirective.html"
+    templateUrl:  "scripts/templates/cardDirective.html"
   };
 
   return directive;
