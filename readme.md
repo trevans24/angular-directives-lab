@@ -63,7 +63,7 @@ We want it to look like:
 
 ## Know The Code - Independent
 
-[GET THE STARTER CODE HERE!](https://github.com/sf-wdi-27-28/angular-custom-directives)
+[GET THE STARTER CODE HERE!](https://github.com/den-wdi-1/angular-directives-lab/tree/master/starter-code)
 
 Take five minutes and inspect our starter code. You'll see a pretty normal Angular app, and since we're repeating using those cards, and there's a few consistent tags we're repeating every time we render a card, we're going to experiment with making those cards a custom-defined directive.
 
@@ -84,7 +84,7 @@ Just like controllers and routing configurations, the first line is a simple ext
 
 ```js
 angular.module('CardsAgainstAssembly')
-  .directive('wdiCard', wdiCard);
+  .directive('WdiCard', WdiCard);
 ```
 
 An important thing to point out: The first argument is the name of the directive and how you'll use it in your HTML. **Angular converts `camelCase` to `snake-case` for us, so if you want to use `<secret-garden></secret-garden>` in your HTML, name your directive** `.directive('secretGarden', myFunctionIHaventMadeYet)`.  
@@ -96,7 +96,7 @@ Remember, in the official Angular docs it's called `ngClass` or `ngRepeat`, but 
 Now, we obviously need a function named `wdiCard`!
 
 ```js
-function wdiCard(){
+function WdiCard(){
   var directive = {};
   return directive;
 }
@@ -131,7 +131,7 @@ You can choose to have just one, all of the above, or any combination you like. 
 For ours, let's play with just an element.
 
 ```js
-function wdiCard(){
+function WdiCard(){
   var directive = {
     restrict: 'E'
   };
@@ -200,7 +200,7 @@ Quickly `touch templates/cardDirective.html` or some similarly obvious-named tem
 In `scripts/cardDirective.js`, we can add our option:
 
 ```js
-function wdiCard(){
+function WdiCard(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
@@ -262,9 +262,9 @@ And finally, in `scripts/cardDirective.js`:
 
 ```js
 angular.module('CardsAgainstAssembly')
-  .directive('wdiCard', wdiCard);
+  .directive('WdiCard', WdiCard);
 
-function wdiCard(){
+function WdiCard(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
