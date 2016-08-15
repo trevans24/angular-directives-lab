@@ -1,7 +1,7 @@
 angular.module('CardsAgainstAssembly')
-  .controller('cardsController', cardsController);
+  .controller('CardsController', CardsController);
 
-function cardsController(){
+function CardsController(){
   var vm = this;
   vm.questionsList = [
     {question: "What is Batman's guilty pleasure?"},
