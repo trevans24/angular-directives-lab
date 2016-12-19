@@ -8,7 +8,6 @@
 | :--- |
 | *Students will be able to:* |
 | **Explain** why custom directives are valuable |
-| **Describe** the different types of custom directives available |
 | **Create** a custom directive |
 
 ### Preparation
