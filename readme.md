@@ -1,4 +1,5 @@
 <!--11:05 5 minutes -->
+<!--11:16 actually -->
 
 <!--Hook: So who can tell me what a directive is?  (If no answer, can try to piece it together / fill in the blanks).  Well in this class, we'll be building our own from scratch. -->
 
@@ -86,7 +87,11 @@ This will let us serve up our HTML and JS files without running into Cross Origi
   We need to do this since by default Chrome doesn't let us request another local file as an HTTP request. This prevents someone from fishing for a specifc file on your computer when you're visiting a site.
 </details>
 
+<!--11:23 when turning over to students -->
+
 <!--Make sure everyone makes it to a good state (can see all cards on localhost:8000), and stress that we're not changing the outward appearance with the next few steps, we're just cleaning up our code -->
+
+<!--Actually 11:35 -->
 
 <!--11:25 5 minutes -->
 
@@ -114,6 +119,8 @@ An important thing to point out: The first argument is the name of the directive
 
 Remember, in the official Angular docs it's called `ngClass` or `ngRepeat`, but in your HTML you use `ng-class` and `ng-repeat`.
 
+<!--Actually 11:40 when devs putting it together-->
+
 <!--11:30 5 minutes -->
 
 #### Let's make a function!
@@ -128,6 +135,8 @@ function wdiCard(){
 ```
 
 Nothing fancy yet - we're just constructing an object and then returning it. We'll put some specifics in there now, but that's simple so far.
+
+<!--Actually 11:46 -->
 
 <!--11:35 10 minutes -->
 
@@ -166,6 +175,8 @@ function wdiCard(){
 }
 ```
 
+<!--Actually 11:48 -->
+
 <!--11:45 10 minutes -->
 
 #### 2. `replace`
@@ -200,6 +211,8 @@ function wdiCard(){
   return directive;
 }
 ```
+
+<!--Actually 11:50 -->
 
 <!--11:55 10 minutes -->
 
@@ -257,6 +270,8 @@ TRY IT! So awesome! We've now got this much more readable `index.html`, with a _
 <img width="965" alt="Cards Against Assembly" src="https://cloud.githubusercontent.com/assets/25366/9666972/05a2f348-522e-11e5-8f6c-7c503032eff4.png">
 
 This is awesome. This is a great, reusable component. Except for _one_ thing.
+
+<!---wooah tricky issue, 3 devs had templateURL instead of templateUrl -->
 
 <!--12:05 15 minutes -->
 
@@ -351,6 +366,8 @@ Somewhere _outside_ the context of the controller, let's say just above the foot
 <img width="965" alt="Custom Card" src="https://cloud.githubusercontent.com/assets/25366/9668827/a352dbf8-5238-11e5-8d00-80ccf02ca95c.png">
 
 Would you look at that? Our own custom directive - a reusable, semantic HTML component that we designed ourselves.
+
+<!-- Actually 12:31 -->
 
 ### Resources
 
