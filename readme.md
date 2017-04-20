@@ -1,5 +1,5 @@
 <!--11:05 5 minutes -->
-<!--11:16 actually -->
+<!--11:16 actually WDI2-->
 
 <!--Hook: So who can tell me what a directive is?  (If no answer, can try to piece it together / fill in the blanks).  Well in this class, we'll be building our own from scratch. -->
 
@@ -67,7 +67,7 @@ We want it to look like:
 
 ## Know The Code - Independent
 
-[GET THE STARTER CODE HERE!](https://github.com/den-wdi-2/angular-directives-lab/tree/master/starter-code)
+[GET THE STARTER CODE HERE!](https://github.com/den-materials/angular-directives-lab/tree/master/starter-code)
 
 Take five minutes and inspect our starter code. You'll see a pretty normal Angular app, and since we're repeating using those cards, there are a few consistent tags we're repeating every time we render a card.  So we're going to make those cards a custom-defined directive to cut out the repetition.
 
@@ -336,7 +336,7 @@ The _value_ is one of 3 options.
 scope: {
   desiredObject: '=',     // Bind the ngModel to the object given (two-way binding)
   desiredFunc: '&',      // Pass a reference to a method
-  desiredString: '@'     // Store the string associated with fromName attribute
+  desiredString: '@'     // Store the string associated with desired-string attribute
 }
 ```
 
