@@ -1,14 +1,25 @@
 angular.module('CardsAgainstAssembly')
   .controller('CardsController', CardsController);
 
-function CardsController(){
-  var vm = this;
-  vm.questionsList = [
-    {question: "What is Batman's guilty pleasure?"},
-    {question: "I'm sorry professor, I couldn't complete my homework because _________."},
-    {question: "I get by with a little help from _________."},
-    {question: "_________. It's a trap!"},
-    {question: "The class field trip was completely ruined by _________."},
-    {question: "What's my secret power?"}
-  ]
+CardsController.$inject = ['$http'];
+
+function CardsController($http){
+  let vm = this;
+  vm.questionsList = [];
+
+  // GET Cards
+  function getCards(){
+    console.log('getting cards');
+    $http.get('https://shielded-forest-41789.herokuapp.com/api/flashcards')
+      .then((res) => {
+        console.log(res.data);
+        vm.questionsList = res.data;
+      });
+  }
+
+  getCards();
+  
+
+
+
 }
