@@ -10,7 +10,7 @@ function CardsController($http){
   vm.all = [];
  
   function getCards(){
-    $http.get('https://shielded-forest-41789.herokuapp.com/api/flashcards')
+    $http.get('http://localhost:3000/cards')
     .then((res) => {
       console.log('Getting Cards');
       console.log(res.data);
@@ -19,5 +19,32 @@ function CardsController($http){
     });
   }
   getCards();
+
+// POST
+  this.newCard = {};
+  this.addCard = addCard;
+
+  function addCard(){
+    console.log('TEST');
+    vm.all.push(this.newCard);
+    $http.post('http://localhost:3000/cards', this.newCard)
+    .then((res) =>{
+      console.log(res);
+    });
+
+    vm.newCard = {};
+  }
+
+// DELETE
+  // this.deleteCard = deleteCard;
+
+  // function deleteCard(card){
+  //   console.log('Clicked Delete');
+  //   $http.delete('http://localhost:3000/cards/' + card._id)
+  //   .then((res)=>{
+  //     let index = vm.all.indexOf(card);
+  //     vm.all.splice(index,1);
+  //   });
+  // }
  
 }

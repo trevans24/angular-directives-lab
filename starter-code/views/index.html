@@ -24,16 +24,23 @@
         <section id="cards" class='container-fluid' ng-controller="CardsController as cards">
           <div class='row'>
             <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.all" >
-              <card class='card' question="{{card.question}}">{{card.question}}</card>
+              <card class='card' question="{{card.question}}">{{card.question}}
+              </card>
+              <button class="delete" ng-click="cards.deleteCard(card)">Delete
+              </button>
             </div>
-
           </div>
-        </section>
-
-        <hr/>
-
-        <card question="Why is Angular so awesome?"></card>
-
+        <br>
+        <form ng-submit="cards.addCard()">
+            <div>
+              <label for="newCard-question">Question:</label>
+              <input type="text" id="newCard-question" ng-model="cards.newCard.question">
+            </div>
+            <div>
+              <input type="submit" value="Add Question">
+            </div>
+        </form>
+      </section>
       <footer>
         <p>Made with <span class='heart'>♥︎</span> at General Assembly</p>
       </footer>

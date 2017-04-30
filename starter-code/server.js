@@ -16,11 +16,22 @@ app.get('/', function home(req, res){
 	res.sendFile(__dirname + '/views/index.html');
 });
 
+// Hard coded Data
+var cards = [
+    {question: "What is Batman's guilty pleasure?"},
+    {question: "I'm sorry professor, I couldn't complete my homework because _________."},
+    {question: "I get by with a little help from _________."},
+    {question: "_________. It's a trap!"},
+    {question: "The class field trip was completely ruined by _________."},
+    {question: "What's my secret power?"}
+  ];
+
+// DB ROUTES
 // Require DB models
-var db = require('./models');
+let db = require('./models');
 
 // GET
-app.get('/api/cards', (req,res)=>{
+app.get('/cards', (req,res)=>{
 	db.Card.find()
 	.exec((err, cards) => {
 		if (err){
@@ -31,7 +42,7 @@ app.get('/api/cards', (req,res)=>{
 });
 
 // SHOW
-app.get('/api/cards/:id', (req,res)=>{
+app.get('/cards/:id', (req,res)=>{
 	db.Card.findOne({_id: req.params.id}, (err, data) =>{
 		if (err){
 			console.log("Show error: ",err);
@@ -41,7 +52,7 @@ app.get('/api/cards/:id', (req,res)=>{
 });
 
 // POST
-app.post('/api/cards', (req,res)=>{
+app.post('/cards', (req,res)=>{
 	var newCard = new db.Card({
 		question: req.body.question
 	});
