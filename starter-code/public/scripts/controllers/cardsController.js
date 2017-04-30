@@ -12,8 +12,8 @@ function CardsController($http){
   function getCards(){
     $http.get('http://localhost:3000/cards')
     .then((res) => {
-      console.log('Getting Cards');
-      console.log(res.data);
+      // console.log('Getting Cards');
+      // console.log(res.data);
       // console.log(res.data[0]);
       vm.all = res.data;
     });
@@ -36,15 +36,16 @@ function CardsController($http){
   }
 
 // DELETE
-  // this.deleteCard = deleteCard;
+  this.deleteCard = deleteCard;
 
-  // function deleteCard(card){
-  //   console.log('Clicked Delete');
-  //   $http.delete('http://localhost:3000/cards/' + card._id)
-  //   .then((res)=>{
-  //     let index = vm.all.indexOf(card);
-  //     vm.all.splice(index,1);
-  //   });
-  // }
+  function deleteCard(id){
+    console.log(id);
+    console.log('Clicked Delete');
+    $http.delete('/cards/' + id)
+    .then((res)=>{
+      let index = vm.all.indexOf(card);
+      vm.all.splice(index,1);
+    });
+  }
  
 }

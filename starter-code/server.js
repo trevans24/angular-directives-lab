@@ -64,6 +64,17 @@ app.post('/cards', (req,res)=>{
 	});
 });
 
+// DELETE
+app.delete('/cards/:id', (req,res)=>{
+	var cardId = req.params.id;
+	db.Card.findOneAndRemove({_id: cardId}, (err, deletedCard)=>{
+		if (err){
+			console.log('Delete Error: ', err);
+		}
+		res.json(deletedCard);
+	});
+});
+
 // server
 app.listen(3000, () => {
 	console.log('Server running on PORT 3000');

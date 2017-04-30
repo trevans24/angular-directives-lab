@@ -13,8 +13,9 @@ angular.module('CardsAgainstAssembly')
 			// scope for directive
 			scope: {
 				// question returned as a string
-				question: '@'
-
+				question: '@',
+				id: '@',
+				delete: '&'
 			}
 		};
 		return directive;

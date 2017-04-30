@@ -10,28 +10,18 @@
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="app.js"></script>
         <script src="scripts/controllers/cardsController.js"></script>
+        <script src="directives/cardDirective.js"></script>
     </head>
         <body>
       <div class="container">
 
         <header class='navbar'>
           <h1 class='pull-left'>Cards Against Assembly</h1>
-
           <scores></scores>
         </header>
 
-
         <section id="cards" class='container-fluid' ng-controller="CardsController as cards">
-          <div class='row'>
-            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.all" >
-              <card class='card' question="{{card.question}}">{{card.question}}
-              </card>
-              <button class="delete" ng-click="cards.deleteCard(card)">Delete
-              </button>
-            </div>
-          </div>
-        <br>
-        <form ng-submit="cards.addCard()">
+          <form ng-submit="cards.addCard()">
             <div>
               <label for="newCard-question">Question:</label>
               <input type="text" id="newCard-question" ng-model="cards.newCard.question">
@@ -39,8 +29,16 @@
             <div>
               <input type="submit" value="Add Question">
             </div>
-        </form>
+          </form>
+
+          <div class='row'>
+            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.all" data-id="">
+              <wdi-card question="{{card.question}}" id="{{card._id}}"></wdi-card>
+              <p>{{card._id}}</p>
+            </div>
+          </div>
       </section>
+
       <footer>
         <p>Made with <span class='heart'>♥︎</span> at General Assembly</p>
       </footer>
