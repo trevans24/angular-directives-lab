@@ -1,25 +1,18 @@
 angular.module('CardsAgainstAssembly')
-  .controller('CardsController', CardsController);
+  .controller('cardsController', cardsController);
 
-CardsController.$inject = ['$http'];
+cardsController.$inject = ['$http'];
 
-function CardsController($http){
-  let vm = this;
+function cardsController($http){
+  var vm = this;
   vm.questionsList = [];
 
-  // GET Cards
   function getCards(){
-    console.log('getting cards');
-    $http.get('https://localhost:3000/cards')
-      .then((res) => {
-        console.log(res.data);
-        vm.questionsList = res.data;
-      });
+    $http.get('https://shielded-forest-41789.herokuapp.com/api/flashcards')
+    .then((res) => {
+      vm.questionsList = res.data;
+    });
   }
-
   getCards();
-  
-
-
-
+ 
 }
