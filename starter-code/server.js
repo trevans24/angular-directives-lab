@@ -75,6 +75,25 @@ app.delete('/cards/:id', (req,res)=>{
 	});
 });
 
+// PUT
+app.put('/cards/:id', (req,res)=>{
+	var cardId = req.params.id;
+	db.Card.findOne({_id: cardId}, (err, foundCard)=>{
+		if (err){
+			console.log('Update error: ', err);
+		}
+		foundCard.id = cardId;
+		foundCard.question = req.body.question;
+		foundCard.save((err, card)=>{
+			if (err){
+				console.log("Update Save Error: ", err);
+			}
+			console.log("Updated ", card.question);
+			res.json(card);
+		});
+	});
+});
+
 // server
 app.listen(3000, () => {
 	console.log('Server running on PORT 3000');

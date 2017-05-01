@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
         <link rel="stylesheet" href="styles/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="app.js"></script>
         <script src="scripts/controllers/cardsController.js"></script>
@@ -32,12 +33,22 @@
           </form>
 
           <div class='row'>
-            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.all" data-id="">
+            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.all" data-card-id="card._id">
               <wdi-card question="{{card.question}}" id="{{card._id}}"></wdi-card>
               <p>{{card._id}}</p>
+
+
+              <form ng-submit="cards.updateCard(editCard.question, card._id)" id="{{card._id}}">
+                  <label for="editCard-question">Question:</label>
+                  <input type="text" id="editCard-question" ng-model="editCard.question">
+                <input type="submit" value="submit">
+              </form>
+
+
             </div>
           </div>
-      </section>
+
+        </section>
 
       <footer>
         <p>Made with <span class='heart'>♥︎</span> at General Assembly</p>
