@@ -77,11 +77,14 @@ app.delete('/cards/:id', (req,res)=>{
 
 // PUT
 app.put('/cards/:id', (req,res)=>{
+	// console.log(req);
 	var cardId = req.params.id;
 	db.Card.findOne({_id: cardId}, (err, foundCard)=>{
 		if (err){
 			console.log('Update error: ', err);
 		}
+		console.log(foundCard);
+		console.log(req.body);
 		foundCard.id = cardId;
 		foundCard.question = req.body.question;
 		foundCard.save((err, card)=>{
@@ -89,7 +92,7 @@ app.put('/cards/:id', (req,res)=>{
 				console.log("Update Save Error: ", err);
 			}
 			console.log("Updated ", card.question);
-			res.json(card);
+		 res.json(card);
 		});
 	});
 });

@@ -15,11 +15,8 @@ function CardsController($http){
   this.editCard = {};
  
   function getCards(){
-    $http.get('http://localhost:3000/cards')
+    $http.get('/cards')
     .then((res) => {
-      // console.log('Getting Cards');
-      // console.log(res.data);
-      // console.log(res.data[0]);
       vm.all = res.data;
     });
   }
@@ -28,7 +25,7 @@ function CardsController($http){
   function addCard(){
     console.log('POST');
     vm.all.push(this.newCard);
-    $http.post('http://localhost:3000/cards', this.newCard)
+    $http.post('/cards', this.newCard)
     .then((res) =>{
       console.log(res);
     });
@@ -36,21 +33,29 @@ function CardsController($http){
   }
 
 // DELETE
-  function deleteCard(card){
-    console.log(card);
+  function deleteCard(id){
+    console.log(id);
     console.log('Clicked Delete');
-    $http.delete('/cards/' + card)
+    $http.delete('/cards/' + id)
     .then((res)=>{
-      let index = vm.all.indexOf(card);
+      let index = vm.all.indexOf(id);
       vm.all.splice(index,1);
     });
   }
 
 // PUT
-  function updateCard(card, id){
-    console.log(card);
+  function updateCard(question, id){
+    console.log(question);
     console.log("update clicked");
     console.log(id);
+    let cardData = {
+      question: question
+    };
+    console.log(cardData);
+    $http.put('/cards/' + id, cardData)
+    .then((res)=>{
+      console.log(res);
+    });
   }
 
 getCards();

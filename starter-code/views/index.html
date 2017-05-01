@@ -24,7 +24,7 @@
         <section id="cards" class='container-fluid' ng-controller="CardsController as cards">
           <form ng-submit="cards.addCard()">
             <div>
-              <label for="newCard-question">Question:</label>
+              <label for="newCard-question">New Question:</label>
               <input type="text" id="newCard-question" ng-model="cards.newCard.question">
             </div>
             <div>
@@ -35,21 +35,19 @@
           <div class='row'>
             <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.all" data-card-id="card._id">
               <wdi-card question="{{card.question}}" id="{{card._id}}"></wdi-card>
-              <p>{{card._id}}</p>
+              <!-- <p>{{card._id}}</p> -->
 
 
               <form ng-submit="cards.updateCard(editCard.question, card._id)" id="{{card._id}}">
-                  <label for="editCard-question">Question:</label>
+                  <label for="editCard-question">Edit Question:</label>
                   <input type="text" id="editCard-question" ng-model="editCard.question">
                 <input type="submit" value="submit">
               </form>
-
 
             </div>
           </div>
 
         </section>
-
       <footer>
         <p>Made with <span class='heart'>♥︎</span> at General Assembly</p>
       </footer>
